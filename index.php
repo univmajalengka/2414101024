@@ -6,8 +6,7 @@ $sql_schedule = "SELECT * FROM class_schedule ORDER BY FIELD(day_of_week, 'Senin
 $result_schedule = mysqli_query($koneksi, $sql_schedule);
 
 // Ambil data testimoni
-$sql_testimonials = "SELECT * FROM testimonials LIMIT 2"; // Batasi hanya 2 testimoni
-$result_testimonials = mysqli_query($koneksi, $sql_testimonials);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +28,7 @@ $result_testimonials = mysqli_query($koneksi, $sql_testimonials);
                 <ul>
                     <li><a href="#paket">Packages</a></li>
                     <li><a href="#jadwal">Schedule</a></li>
-                    <li><a href="#testimoni">Testimonials</a></li>
+                    
                 </ul> 
             </nav>
             <div class="auth-buttons">
@@ -142,17 +141,7 @@ $result_testimonials = mysqli_query($koneksi, $sql_testimonials);
     </div>
 </section>
 
-        <section id="testimoni" class="section">
-            <div class="testimoni-container">
-    <?php while ($testimonial = mysqli_fetch_assoc($result_testimonials)) { ?>
-        <div class="testimoni-card">
-            <img src="images/<?php echo htmlspecialchars($testimonial['member_photo_url']); ?>" alt="Foto Member" class="profile-pic">
-            <p class="quote">"<?php echo htmlspecialchars($testimonial['testimonial_text']); ?>"</p>
-            <p class="author">- <?php echo htmlspecialchars($testimonial['member_name']); ?>, <?php echo htmlspecialchars($testimonial['member_type']); ?></p>
-        </div>
-    <?php } ?>
-</div>
-        </section>
+        
     </main>
 
     <footer class="footer">
