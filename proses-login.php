@@ -12,7 +12,7 @@ $password = $_POST['password'];
 // Validasi sederhana
 if (empty($email) || empty($password)) {
     // Arahkan ke halaman gagal jika ada field kosong
-    header("Location: gagal.html");
+    header("Location: gagal.php");
     exit();
 }
 
@@ -40,18 +40,18 @@ if ($user = mysqli_fetch_assoc($result)) {
             header("Location: admin/dashboard.php");
         } else {
             // Jika perannya member, arahkan ke dashboard member
-            header("Location: member/dashboard.html");
+            header("Location: member/dashboard.php");
         }
         exit();
 
     } else {
         // Jika password salah, arahkan ke halaman gagal
-        header("Location: gagal.html");
+        header("Location: gagal.php");
         exit();
     }
 } else {
     // Jika email tidak ditemukan, arahkan ke halaman gagal
-    header("Location: gagal.html");
+    header("Location: gagal.php");
     exit();
 }
 

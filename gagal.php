@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrasi Berhasil - FitBoss Gym</title>
+    <title>Proses Gagal - FitBoss Gym</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,11 +13,11 @@
 
     <div class="status-card-container">
         <div class="status-card">
-            <span class="status-icon success">✅</span>
-            <h2 class="status-title">Registrasi Berhasil!</h2>
-            <p class="status-subtitle">Akun Anda telah berhasil dibuat. Silakan login untuk melanjutkan ke dashboard member.</p>
+            <span class="status-icon error">❌</span>
+            <h2 class="status-title error">Proses Gagal!</h2>
+            <p class="status-subtitle">Terjadi kesalahan. Kemungkinan email sudah terdaftar atau password yang Anda masukkan salah. Silakan coba lagi.</p>
             <div class="status-actions">
-                <a href="login.html" class="btn btn-primary">Lanjut ke Halaman Login</a>
+                <a href="register.php" class="btn btn-secondary">Kembali</a>
             </div>
         </div>
     </div>

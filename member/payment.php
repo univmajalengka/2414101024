@@ -1,3 +1,19 @@
+<?php
+session_start();
+require '../koneksi.php'; // Panggil koneksi
+
+// Cek apakah user sudah login dan rolenya 'member'
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'member') {
+    // Jika tidak, tendang ke halaman login utama
+    header("Location: ../login.php");
+    exit();
+}
+
+// Ambil ID member yang sedang login untuk digunakan nanti
+$user_id = $_SESSION['user_id'];
+$nama_lengkap = $_SESSION['nama_lengkap'];
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -12,7 +28,7 @@
 <body class="auth-page">
 
     <div class="payment-container">
-        <a href="index.html" class="logo auth-logo">Fit<span>Boss</span></a>
+        <a href="index.php" class="logo auth-logo">Fit<span>Boss</span></a>
         
         <form class="payment-card" action="../proses-pembayaran.php" method="POST">
             <div class="order-summary">

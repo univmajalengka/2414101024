@@ -1,3 +1,20 @@
+<?php
+session_start();
+require '../koneksi.php'; // Panggil koneksi
+
+// Cek apakah user sudah login dan rolenya 'member'
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'member') {
+    // Jika tidak, tendang ke halaman login utama
+    header("Location: ../login.php");
+    exit();
+}
+
+// Ambil ID member yang sedang login untuk digunakan nanti
+$user_id = $_SESSION['user_id'];
+$nama_lengkap = $_SESSION['nama_lengkap'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -13,24 +30,23 @@
 
     <header class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo">Fit<span>Boss</span></a>
+            <a href="../index.php" class="logo">Fit<span>Boss</span></a>
             <nav>
     <ul>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="riwayat-transaksi.html">Riwayat Transaksi</a></li>
-        <li><a href="profile.html">Profil</a></li>
+        <li><a href="dashboard.php">Dashboard</a></li>
+        <li><a href="profile.php">Profil</a></li>
     </ul>
 </nav>
             <div class="auth-buttons">
                 <span class="welcome-user">Hi, Fitriani</span>
-                <a href="../index.html" class="btn btn-primary">LOGOUT</a>
+                <a href="../index.php" class="btn btn-primary">LOGOUT</a>
             </div>
         </div>
     </header>
 <body class="auth-page">
 
     <div class="confirmation-container">
-        <a href="index.html" class="logo auth-logo">Fit<span>Boss</span></a>
+        <a href="index.php" class="logo auth-logo">Fit<span>Boss</span></a>
         
         <div class="confirmation-card">
             <div class="status-header">
@@ -64,7 +80,7 @@
                 <p class="contact-number"><strong>WhatsApp:</strong> 0812-xxxx-xxxx</p>
             </div>
 
-            <a href="dashboard.html" class="btn btn-secondary auth-btn">Kembali ke Dashboard</a>
+            <a href="dashboard.php" class="btn btn-secondary auth-btn">Kembali ke Dashboard</a>
         </div>
     </div>
 

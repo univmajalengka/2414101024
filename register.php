@@ -12,7 +12,7 @@
 <body class="auth-page">
 
     <div class="auth-container">
-        <a href="index.html" class="logo auth-logo">Fit<span>Boss</span></a>
+        <a href="index.php" class="logo auth-logo">Fit<span>Boss</span></a>
         <div class="auth-card">
             <h2>SIGN UP</h2>
             <form action="proses-register.php" method="POST">
@@ -34,7 +34,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary auth-btn">CREATE ACCOUNT</button>
             </form>
-            <p class="auth-switch">Already have an account? <a href="login.html">Login here</a></p>
+            <p class="auth-switch">Already have an account? <a href="login.php">Login here</a></p>
         </div>
     </div>
 

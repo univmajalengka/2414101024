@@ -4,7 +4,7 @@ require '../koneksi.php';
 
 // Cek keamanan
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ../admin-login.html");
+    header("Location: ../admin-login.php");
     exit();
 }
 

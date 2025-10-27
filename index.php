@@ -32,8 +32,8 @@ $result_schedule = mysqli_query($koneksi, $sql_schedule);
                 </ul> 
             </nav>
             <div class="auth-buttons">
-                <a href="login.html" class="btn btn-secondary">LOGIN</a>
-                <a href="register.html" class="btn btn-primary">SIGN UP</a>
+                <a href="login.php" class="btn btn-secondary">LOGIN</a>
+                <a href="register.php" class="btn btn-primary">SIGN UP</a>
             </div>
         </div>
     </header>
@@ -60,7 +60,7 @@ $result_schedule = mysqli_query($koneksi, $sql_schedule);
                             <li>✅ Locker & Shower Room</li>
                             <li>✅ Initial Equipment Guidance</li>
                         </ul>
-                        <a href="register.html?plan=Gym+Membership" class="btn btn-primary">Choose Package</a>
+                        <a href="register.php?plan=Gym+Membership" class="btn btn-primary">Choose Package</a>
                     </div>
                     <div class="paket-card featured">
                         <span class="badge">Most Popular</span>
@@ -71,17 +71,7 @@ $result_schedule = mysqli_query($koneksi, $sql_schedule);
                             <li>✅ Access to All Classes</li>
                             <li>✅ Online Class Booking System</li>
                         </ul>
-                        <a href="register.html?plan=Gym+%2B+Class" class="btn btn-primary">Choose Package</a>
-                    </div>
-                    <div class="paket-card">
-                        <h3>Private Coach</h3>
-                        <p class="harga">Starts from Rp 1.000.000</p>
-                        <ul>
-                            <li>✅ Personalized Training Program</li>
-                            <li>✅ Nutrition Consultation</li>
-                            <li>✅ Body Analysis</li>
-                        </ul>
-                        <a href="#" id="view-coaches-btn" class="btn btn-primary">View Coaches</a>
+                        <a href="register.php?plan=Gym+%2B+Class" class="btn btn-primary">Choose Package</a>
                     </div>
                 </div>
             </div>
@@ -154,75 +144,5 @@ $result_schedule = mysqli_query($koneksi, $sql_schedule);
             <p class="copyright">&copy; 2025 FitBoss Gym. Dibuat untuk Tugas Besar UNMA.</p>
         </div>
     </footer>
-
-    <div id="coach-modal" class="modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <h2 class="section-title">Choose Your Personal Coach</h2>
-            <div class="coach-container-modal">
-                <div class="coach-card">
-                    <img src="images/coach-joe.jpg" alt="Foto Coach Joe" class="coach-pic" loading="lazy">
-                    <h3>Coach Joe</h3>
-                    <p class="harga">Rp 1.700.000 <span>/ 10 Sesi</span></p>
-                    <a href="#" class="btn btn-secondary">Choose Coach Joe</a>
-                </div>
-                <div class="coach-card">
-                    <img src="images/coach-eka.jpg" alt="Foto Coach Eka" class="coach-pic" loading="lazy">
-                    <h3>Coach Eka</h3>
-                    <p class="harga">Rp 1.400.000 <span>/ 10 Sesi</span></p>
-                    <a href="#" class="btn btn-secondary">Choose Coach Eka</a>
-                </div>
-                <div class="coach-card">
-                    <img src="images/coach-anton.jpg" alt="Foto Coach Anton" class="coach-pic" loading="lazy">
-                    <h3>Coach Anton</h3>
-                    <p class="harga">Rp 1.000.000 <span>/ 10 Sesi</span></p>
-                    <a href="#" class="btn btn-secondary">Choose Coach Anton</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-      // Script untuk membuka dan menutup modal
-      const modal = document.getElementById('coach-modal');
-      const openModalBtn = document.getElementById('view-coaches-btn');
-      const closeModalBtn = document.querySelector('.close-modal');
-      const overlay = document.querySelector('.modal-overlay');
-
-      function openModal(e) {
-        if (e) e.preventDefault();  
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden'; 
-      }
-      function closeModal() {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-      }
-
-      openModalBtn.addEventListener('click', openModal);
-      closeModalBtn.addEventListener('click', closeModal);
-      overlay.addEventListener('click', closeModal);
-      document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
-      });
-    </script>
-    <script>
-      // Script untuk tombol "Choose Coach" di dalam modal
-      document.querySelector('.coach-container-modal')
-        .addEventListener('click', (e) => {
-          const a = e.target.closest('a.btn');
-          if (!a) return;
-          e.preventDefault();
-          const name = a.textContent.trim().replace('Choose ',''); // "Coach Joe"
-          const url = new URL('register.html', location.href);
-          url.searchParams.set('plan', 'private');
-          url.searchParams.set('coach', name);
-          location.href = url.toString();
-        });
-    </script>
-
-
-
 </body>
 </html>

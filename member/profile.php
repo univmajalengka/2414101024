@@ -1,3 +1,18 @@
+<?php
+session_start();
+require '../koneksi.php'; // Panggil koneksi
+
+// Cek apakah user sudah login dan rolenya 'member'
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'member') {
+    // Jika tidak, tendang ke halaman login utama
+    header("Location: ../login.php");
+    exit();
+}
+
+// Ambil ID member yang sedang login untuk digunakan nanti
+$user_id = $_SESSION['user_id'];
+$nama_lengkap = $_SESSION['nama_lengkap'];
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -14,17 +29,17 @@
   <!-- Navbar -->
   <header class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo">Fit<span>Boss</span></a>
+            <a href="../index.php" class="logo">Fit<span>Boss</span></a>
             <nav>
                 <ul>
-                    <li><a href="/member/dashboard.html">Dashboard</a></li>
-                    <li><a href="/member/riwayat-transaksi.html">Riwayat Transaksi</a></li>
-                    <li><a href="/member/profile.html">Profil</a></li>
+                    <li><a href="dashboard.php">Dashboard</a></li>
+                    <li><a href="profile.php">Profil</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <span class="welcome-user">Hi, Fitriani</span>
+                <span class="welcome-user">Hi, <?php echo htmlspecialchars($nama_lengkap); ?></span>
                 <a href="../logout.php" class="btn btn-primary">LOGOUT</a>
+
             </div>
         </div>
     </header>

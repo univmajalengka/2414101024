@@ -28,11 +28,11 @@ mysqli_stmt_bind_param($stmt, "ssss", $nama_lengkap, $email, $nomor_telepon, $pa
 // 6. Mengeksekusi statement dan Cek Hasil
 if (mysqli_stmt_execute($stmt)) {
     // Jika registrasi berhasil, arahkan ke halaman sukses
-    header("Location:register-sukses.html");
+    header("Location:register-sukses.php");
     exit();
 } else {
     // Jika registrasi gagal, arahkan ke halaman gagal
-    header("Location:gagal.html");
+    header("Location:gagal.php");
     exit();
 }
 
