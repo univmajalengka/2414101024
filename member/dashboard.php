@@ -102,18 +102,6 @@ mysqli_stmt_close($stmt);
         }
     ?>
 </p>
-
-                <!-- Tambahan coach -->
-                <div class="coach-info">
-                  <p>Private Coach: <b id="coachName">Oom</b>
-                  <a
-                  href="https://wa.me/6281234567890?text=Halo%20Coach%20Oom%2C%20saya%20member%20FitBoss%20ingin%20konfirmasi%20jadwal."
-                  target="_blank"
-                  class="btn btn-secondary">
-                  Hubungi Coach
-                </a>
-                  </p>
-                </div>
                 <div class="member-actions">
                 <a href="payment.php" class="btn btn-primary renew-btn">Perpanjang Membership</a>
               </div>
